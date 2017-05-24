@@ -9,22 +9,36 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Dimensions,
 } from 'react-native';
 
+
 export default class example extends Component {
+  constructor(props) {
+    super(props);
+    this.displaySize = this.displaySize.bind(this);
+  }
+  
+  displaySize(event) {
+    var {x, y, width, height} = event.nativeEvent.layout;
+    console.log("x: " + x + ", y: " + y);
+    console.log("width: " + width + ", height: " + height);
+  }
+
   render() {
+    const dim = Dimensions.get('screen');
+    console.log("windowWidth: " + dim.width + ", windowHeight: " + dim.height);
     return (
-      <View style={styles.container}>
+      <View style={styles.container} onLayout={this.displaySize}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
         </Text>
-        <Text style={styles.instructions}>
+        <Text style={styles.instructions} onLayout={this.displaySize}>
           Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
