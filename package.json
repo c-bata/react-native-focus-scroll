@@ -1,0 +1,9 @@
+{
+  "name": "react-native-focused-scrollview",
+  "version": "0.0.1",
+  "description": "ScrollView provided onFocused callback props for React Native.",
+  "main": "focused-scrollview.js",
+  "repository": "git@github.com:c-bata/react-native-focused-scrollview.git",
+  "author": "c-bata <contact@c-bata.link>",
+  "license": "MIT"
+}
