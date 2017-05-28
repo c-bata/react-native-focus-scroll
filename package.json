@@ -5,5 +5,8 @@
   "main": "onfocus-scroll.js",
   "repository": "git@github.com:c-bata/react-native-onfocus-scroll.git",
   "author": "c-bata <contact@c-bata.link>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
 }
