@@ -1,6 +1,6 @@
-# react-native-focused-scrollview
+# react-native-onfocus-scroll
 
-ScrollView provided onFocused callback props for React Native.
+ScrollView and ListView has onFocus callback for React Native.
 
-![Example](https://github.com/c-bata/react-native-focused-scrollview/raw/master/example/anim.gif)
+![Example](https://github.com/c-bata/react-native-onfocus-scroll/raw/master/example/anim.gif)
 
