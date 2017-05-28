@@ -14,7 +14,7 @@ import {
     Image,
 } from 'react-native';
 
-import { OnFocusScrollView } from 'react-native-onfocus-scroll';
+import { FocusScrollView } from 'react-native-focus-scroll';
 
 class BeerComponent extends Component {
     render() {
@@ -48,16 +48,16 @@ export default class example extends Component {
 
     render() {
         const beers = [
-            {name: "PAULANER", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/paulaner.jpg?raw=true"},
-            {name: "KILKENNY", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/kilkenny.jpg?raw=true"},
-            {name: "GUINESS", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/guiness.jpg?raw=true"},
-            {name: "YAMATANO-OROCHI", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/rokko-yamatanoorochi-ipa.jpg?raw=true"},
+            {name: "PAULANER", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/paulaner.jpg?raw=true"},
+            {name: "KILKENNY", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/kilkenny.jpg?raw=true"},
+            {name: "GUINESS", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/guiness.jpg?raw=true"},
+            {name: "YAMATANO-OROCHI", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/rokko-yamatanoorochi-ipa.jpg?raw=true"},
         ];
         return (
             <View style={styles.container}>
-                <OnFocusScrollView threshold={dim.width / 2}>
+                <FocusScrollView threshold={dim.width / 2}>
                     {beers.map((beer, index) => <BeerComponent key={index} name={beer.name} imageUrl={beer.imageUrl} />)}
-                </OnFocusScrollView>
+                </FocusScrollView>
             </View>
         );
     }

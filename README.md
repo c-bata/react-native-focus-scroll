@@ -1,8 +1,8 @@
-# react-native-onfocus-scroll
+# react-native-focus-scroll
 
 ScrollView and ListView to detect the children is focused.
 
-![Example](https://github.com/c-bata/react-native-onfocus-scroll/raw/master/example/anim.gif)
+![Example](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim.gif)
 
 ## Usage
 
@@ -17,7 +17,7 @@ import {
     Image,
 } from 'react-native';
 
-import { OnFocusScrollView } from 'react-native-onfocus-scroll';
+import { FocusScrollView } from 'react-native-focus-scroll';
 
 class BeerComponent extends Component {
     render() {
@@ -47,16 +47,16 @@ export default class example extends Component {
 
     render() {
         const beers = [
-            {name: "PAULANER", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/paulaner.jpg?raw=true"},
-            {name: "KILKENNY", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/kilkenny.jpg?raw=true"},
-            {name: "GUINESS", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/guiness.jpg?raw=true"},
-            {name: "YAMATANO-OROCHI", imageUrl: "https://github.com/c-bata/react-native-onfocus-scroll/blob/master/example/assets/rokko-yamatanoorochi-ipa.jpg?raw=true"},
+            {name: "PAULANER", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/paulaner.jpg?raw=true"},
+            {name: "KILKENNY", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/kilkenny.jpg?raw=true"},
+            {name: "GUINESS", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/guiness.jpg?raw=true"},
+            {name: "YAMATANO-OROCHI", imageUrl: "https://github.com/c-bata/react-native-focus-scroll/blob/master/example/assets/rokko-yamatanoorochi-ipa.jpg?raw=true"},
         ];
         return (
             <View style={styles.container}>
-                <OnFocusScrollView>
+                <FocusScrollView>
                     {beers.map((beer, index) => <BeerComponent key={index} name={beer.name} imageUrl={beer.imageUrl} />)}
-                </OnFocusScrollView>
+                </FocusScrollView>
             </View>
         );
     }
@@ -65,4 +65,4 @@ export default class example extends Component {
 
 ## LICENSE
 
-[MIT License](https://github.com/c-bata/react-native-onfocus-scroll/raw/master/LICENSE)
+[MIT License](https://github.com/c-bata/react-native-focus-scroll/raw/master/LICENSE)

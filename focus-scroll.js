@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 
 
-export class OnFocusScrollView extends Component {
+export class FocusScrollView extends Component {
     constructor(props) {
         super(props);
 
