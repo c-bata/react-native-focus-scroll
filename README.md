@@ -1,6 +1,6 @@
 # react-native-focus-scroll
 
-ScrollView and ListView to detect the children is focused.
+react-native-focus-scroll can detect which children are focused when scrolling.
 
 ![Example](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim.gif)
 
