@@ -19,15 +19,19 @@ import { OnFocusScrollView } from 'react-native-onfocus-scroll';
 class BeerComponent extends Component {
     render() {
         let focusText;
+        let opacity;
         if (this.props.isFocused) {
             focusText = (<Text style={{color: "#ff0"}}>Focused!</Text>);
+            opacity = {opacity: 1};
+
         } else {
             focusText = (<Text style={{color: "#fff"}}>Not Focused!</Text>);
+            opacity = {opacity: 0.4};
         }
 
         return (
             <View style={[styles.square, styles.wrapper]} onLayout={this.props.onLayout}>
-                <Image style={[styles.square, {position: "absolute"}]} source={{uri: this.props.imageUrl}} />
+                <Image style={[styles.square, opacity, {position: "absolute"}]} source={{uri: this.props.imageUrl}} />
                 <View style={styles.textWrapper}>
                     <Text style={styles.text}>{this.props.name}</Text>
                     {focusText}
@@ -51,7 +55,7 @@ export default class example extends Component {
         ];
         return (
             <View style={styles.container}>
-                <OnFocusScrollView>
+                <OnFocusScrollView threshold={dim.width / 2}>
                     {beers.map((beer, index) => <BeerComponent key={index} name={beer.name} imageUrl={beer.imageUrl} />)}
                 </OnFocusScrollView>
             </View>
@@ -71,6 +75,7 @@ const styles = StyleSheet.create({
     wrapper: {
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "#000",
     },
     textWrapper: {
         position: "absolute",

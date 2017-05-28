@@ -58,7 +58,7 @@ export class OnFocusScrollView extends Component {
     }
 
     render() {
-        const margin = this.props.margin ? this.props.margin : 100;
+        const threshold = this.props.threshold ? this.props.threshold : 100;
         const whetherIsFocused = this.props.whetherIsFocused ? this.props.whetherIsFocused : this.whetherIsFocused;
 
         const children = this.props.children.map((item, i) => {
@@ -72,7 +72,7 @@ export class OnFocusScrollView extends Component {
                     isFocused = true
                 }
             } else {
-                isFocused = whetherIsFocused(size, margin);
+                isFocused = whetherIsFocused(size, threshold);
             }
             return React.cloneElement(item, {
                 onLayout: this.getDisplaySize(i),
