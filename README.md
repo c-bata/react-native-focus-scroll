@@ -4,6 +4,12 @@ ScrollView and ListView to detect the children is focused.
 
 ![Example](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim.gif)
 
+## Installation
+
+```console
+$ npm i react-native-focus-scroll
+```
+
 ## Usage
 
 ```jsx
@@ -62,6 +68,36 @@ export default class example extends Component {
     }
 }
 ```
+
+## Properties
+
+All props is propagate to `ScrollView` wrapped by `FocusScrollView` .
+
+
+#### threshold
+
+- type: `integer`
+- required?: optional
+- default: `100`
+
+If the distance between the center of FocusScrollView and the center of each children exceed a threshold,
+The item of FocusScrollView is focused.
+
+#### whetherIsFocused
+
+- type: `function(size, margin) bool {}`
+- required?: optional
+
+To replace the judge whether the child is focused.
+The default function is below.
+
+```jsx
+whetherIsFocused(size, margin) {
+    const distance = Math.abs((size.y + size.height / 2) - this.getCenterY());
+    return distance < margin;
+}
+```
+
 
 ## LICENSE
 
