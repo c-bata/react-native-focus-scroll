@@ -10,6 +10,13 @@ ScrollView and ListView to detect the children is focused.
 $ npm i react-native-focus-scroll
 ```
 
+## TODO
+
+- [x] Add FocusScrollView
+- [ ] Add FocusListView
+- [ ] Support horizontal scroll
+- [ ] Add an android sample
+
 ## Usage
 
 ```jsx
