@@ -2,7 +2,8 @@
 
 react-native-focus-scroll can detect which children are focused when scrolling.
 
-![Example](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim.gif)
+![Example - vertical](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim.gif)
+![Example - horizontal](https://github.com/c-bata/react-native-focus-scroll/raw/master/example/anim-horizontal.gif)
 
 ## Installation
 
@@ -14,7 +15,7 @@ $ npm i react-native-focus-scroll
 
 - [x] Add FocusScrollView
 - [ ] Add FocusListView
-- [ ] Support horizontal scroll
+- [x] Support horizontal scroll
 - [ ] Add an android sample
 
 ## Usage

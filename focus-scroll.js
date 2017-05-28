@@ -9,7 +9,7 @@ export class FocusScrollView extends Component {
         super(props);
 
         this.getScrollViewSize = this.getScrollViewSize.bind(this);
-        this.getCenterY = this.getCenterY.bind(this);
+        this.getCenter = this.getCenter.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
         this.whetherIsFocused = this.whetherIsFocused.bind(this);
 
@@ -21,8 +21,13 @@ export class FocusScrollView extends Component {
         }
     }
 
-    getCenterY() {
-        return (this.state.offsetY - this.state.scrollViewY) + (this.state.scrollViewHeight / 2)
+    getCenter() {
+        if (this.props.horizontal) {
+            const x = this.state.offsetX - this.state.scrollViewX;
+            return x + (this.state.scrollViewWidth / 2)
+        }
+        const y = this.state.offsetY - this.state.scrollViewY;
+        return y + (this.state.scrollViewHeight / 2)
     }
 
     getScrollViewSize(event) {
@@ -53,7 +58,12 @@ export class FocusScrollView extends Component {
     }
 
     whetherIsFocused(size, margin) {
-        const distance = Math.abs((size.y + size.height / 2) - this.getCenterY());
+        let distance;
+        if (this.props.horizontal) {
+            distance = Math.abs((size.x + size.width / 2) - this.getCenter());
+        } else {
+            distance = Math.abs((size.y + size.height / 2) - this.getCenter());
+        }
         return distance < margin;
     }
 
