@@ -1,5 +1,5 @@
 {
-  "name": "react-native-onfocus-scrol",
+  "name": "react-native-onfocus-scroll",
   "version": "0.0.1",
   "description": "ScrollView and ListView has onFocus callback for React Native.",
   "main": "onfocus-scroll.js",
