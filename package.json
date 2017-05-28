@@ -1,7 +1,7 @@
 {
   "name": "react-native-onfocus-scroll",
-  "version": "0.0.1",
-  "description": "ScrollView and ListView has onFocus callback for React Native.",
+  "version": "0.0.2",
+  "description": "ScrollView and ListView to detect the children is focused.",
   "main": "onfocus-scroll.js",
   "repository": "git@github.com:c-bata/react-native-onfocus-scroll.git",
   "author": "c-bata <contact@c-bata.link>",

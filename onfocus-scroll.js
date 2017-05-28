@@ -11,13 +11,13 @@ export class OnFocusScrollView extends Component {
         this.getScrollViewSize = this.getScrollViewSize.bind(this);
         this.getCenterY = this.getCenterY.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
+        this.whetherIsFocused = this.whetherIsFocused.bind(this);
 
         this.state = {
             scrollViewX: 0,
             scrollViewY: 0,
             scrollViewHeight: 0,
             scrollViewWidth: 0,
-            focusedItem: null,
         }
     }
 
@@ -52,16 +52,27 @@ export class OnFocusScrollView extends Component {
         });
     }
 
+    whetherIsFocused(size, margin) {
+        const distance = Math.abs((size.y + size.height / 2) - this.getCenterY());
+        return distance < margin;
+    }
+
     render() {
-        console.log(this.getCenterY());
-        const focusedKey = this.state.focusedItem;
+        const margin = this.props.margin ? this.props.margin : 100;
+        const whetherIsFocused = this.props.whetherIsFocused ? this.props.whetherIsFocused : this.whetherIsFocused;
+
         const children = this.props.children.map((item, i) => {
             const size = this.state["item" + i];
-            let isFocused;
+            let isFocused = false;
             if (typeof size === "undefined") {
-                isFocused = false
+                // onLayout callback function is called when scrolling.
+                // So the size of all props.children are initialized by undefined.
+                // Now, first child is initialized by isFocused=true.
+                if (i === 0) {
+                    isFocused = true
+                }
             } else {
-                isFocused = Math.abs((size.y + size.height / 2) - this.getCenterY()) < 100;
+                isFocused = whetherIsFocused(size, margin);
             }
             return React.cloneElement(item, {
                 onLayout: this.getDisplaySize(i),
