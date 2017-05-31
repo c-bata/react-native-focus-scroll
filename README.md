@@ -14,7 +14,6 @@ $ npm i react-native-focus-scroll
 ## TODO
 
 - [x] Add FocusScrollView
-- [ ] Add FocusListView
 - [x] Support horizontal scroll
 - [ ] Add an android sample
 
