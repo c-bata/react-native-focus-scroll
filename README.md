@@ -22,10 +22,6 @@ $ npm i react-native-focus-scroll
 ```jsx
 import React, { Component } from 'react';
 import {
-    AppRegistry,
-    StyleSheet,
-    Dimensions,
-    Text,
     View,
     Image,
 } from 'react-native';
